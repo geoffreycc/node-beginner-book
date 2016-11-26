@@ -1,0 +1,17 @@
+{
+  "name": "node-beginner-book-geoff",
+  "version": "1.0.0",
+  "description": "I am following along with the node beginner book.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "'mocha'"
+  },
+  "author": "geoff cox",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
