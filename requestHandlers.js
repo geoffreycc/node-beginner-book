@@ -18,8 +18,8 @@ function upload(res, postData) {
 }
 function show(res) {
   console.log('request handler show was called');
-  res.writeHead(200, {'Content-Type': 'image/png'});
-  fs.createReadStream('tmp/test.png').pipe(res);
+  res.writeHead(200, {'Content-Type': 'image/jpg'});
+  fs.createReadStream('/tmp/test.jpg').pipe(res);
 }
 
 exports.start = start;
