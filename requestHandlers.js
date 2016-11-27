@@ -1,19 +1,21 @@
 'use strict';
 
-function start() {
-  console.log('request handler start was called');
+let exec = require('child_process').exec;
 
-  function sleep(miliseconds) {
-    let startTime = new Date().getTime();
-    while (new Date().getTime() < startTime + miliseconds);
-  }
-  sleep(10000);
-  return 'hello start';
+function start(res) {
+  console.log('request handler start was called');
+  exec('ls -lah', function(error, stdout, stderr) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.write(stdout);
+    res.end();
+  });
 }
 
-function upload() {
+function upload(res) {
   console.log('request handler upload was called');
-  return 'hello upload';
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.write('hello upload');
+  res.end();
 }
 
 exports.start = start;
