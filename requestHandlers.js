@@ -22,7 +22,7 @@ function upload(res, req) {
         fs.rename(files.upload.path, '/tmp/test.jpg');
       }
     });
-    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.writeHead(200, {'Content-Type': 'text/html'});
     res.write('recieved image </br>');
     res.write('<img src="/show" />');
     res.end();
